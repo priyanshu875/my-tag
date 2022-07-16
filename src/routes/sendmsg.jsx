@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { storage } from "./firebase";
 import {getDownloadURL, ref, uploadBytes} from "firebase/storage"
 import './css/sendmsg.css'
+import uuid from 'react-uuid';
 
 function SendMsg(){
 
@@ -16,9 +17,11 @@ function SendMsg(){
     const[dis,setDis]=useState(true);
 
     function uploadImg(file){
+        document.getElementById("btn-sub").disabled = true;
         document.getElementById("btn-sub").value='uploading'
+
         console.log(file);
-        const imageRef=ref(storage,`image/${file.name}`);
+        const imageRef=ref(storage,`image/${file.name+uuid()}`);
         uploadBytes(imageRef,file).then((snapshot)=>{
             console.log('uploaded');
             getDownloadURL(imageRef).then((url)=>{
