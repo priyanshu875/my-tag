@@ -55,10 +55,11 @@ function SendMsg(){
 
 
 
-
     return <div className="sendmsg">
         <header>
-        <span class="material-symbols-outlined">anchor</span>
+        <span onClick={(e)=>{
+            window.location.href='../'
+        }} class="material-symbols-outlined">anchor</span>
         
         </header>
         <div className="center-send">

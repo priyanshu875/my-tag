@@ -6,7 +6,9 @@ import './css/home.css'
 function Home(){
     return <div className="Home">
         <header>
-        <span class="material-symbols-outlined">anchor</span>
+        <span onClick={(e)=>{
+            window.location.href='../'
+        }} class="material-symbols-outlined">anchor</span>
         <Link to="./login"><button className="login-btn">Login</button></Link>
         </header>
 
