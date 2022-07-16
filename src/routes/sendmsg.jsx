@@ -13,6 +13,7 @@ function SendMsg(){
     const[senderContact,setSenderContact]=useState('')
     const[senderAddress,setSenderAddress]=useState('')
     const[senderMessage,setSenderMsg]=useState('')
+    const[dis,setDis]=useState(true);
 
     function uploadImg(file){
         console.log(file);
@@ -22,12 +23,15 @@ function SendMsg(){
             getDownloadURL(imageRef).then((url)=>{
                 console.log(url);
                 setImageUrl(url)
+                setDis(true);
+                document.getElementById("btn-sub").disabled = false;
+                
             })
         })
         
     }
 
-
+    
 
     async function sendMsg(event){
         try{event.preventDefault();
@@ -40,8 +44,8 @@ function SendMsg(){
         })
         let obj=await data.json();
         console.log(obj);
-        if(obj.status=='ok')alert('Thank you for your support')
-        else alert('Server problem')
+        // if(obj.status=='ok')alert('Thank you for your support')
+        // else alert('Server problem')
         }catch(err){
             alert(err)
         }
@@ -95,7 +99,7 @@ function SendMsg(){
             required
             /></span>
 
-            <input type="submit" value="Send" />
+            <input type="submit" value="Send" id="btn-sub" disabled/>
         </form></div>
     </div>
 }
