@@ -16,6 +16,7 @@ function SendMsg(){
     const[dis,setDis]=useState(true);
 
     function uploadImg(file){
+        document.getElementById("btn-sub").value='uploading'
         console.log(file);
         const imageRef=ref(storage,`image/${file.name}`);
         uploadBytes(imageRef,file).then((snapshot)=>{
@@ -24,6 +25,7 @@ function SendMsg(){
                 console.log(url);
                 setImageUrl(url)
                 setDis(true);
+                document.getElementById("btn-sub").value='Send';
                 document.getElementById("btn-sub").disabled = false;
                 
             })
@@ -101,6 +103,7 @@ function SendMsg(){
             onChange={(e)=>uploadImg(e.target.files[0])}
             required
             /></span>
+            <p id="uploading"></p>
 
             <input type="submit" value="Send" id="btn-sub" disabled/>
         </form></div>
