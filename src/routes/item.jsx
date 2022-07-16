@@ -59,25 +59,27 @@ function Item(){
         
     },[])
 
-    // const downQr=useCallback(async ()=>{
-    //     const canvas=await html2canvas(document.getElementById('item-info'))
-    //     const dataUrl=canvas.toDataURL('image.png')
-    //     downloadjs(dataUrl,'my-qr.png','image/png');
-    // },[])
-    function downQr(){
+    const downQr=useCallback(async ()=>{
         document.getElementById('btn-click').innerHTML='Please wait';
-        const qrCode=document.getElementById('qr-div');
-        html2canvas(qrCode).then((canvas)=>{
-            const base64image=canvas.toDataURL('image/png');
-            var anchor=document.createElement('a');
-            anchor.setAttribute('href',base64image);
-            anchor.setAttribute('download','myqr-img.png');
-            anchor.click();
-            anchor.remove();
-        })
-        // document.getElementById('btn-click').innerHTML='donw';
+        const canvas=await html2canvas(document.getElementById('qr-div'))
+        const dataUrl=canvas.toDataURL('image.png')
+        downloadjs(dataUrl,'my-qr.png','image/png');
         document.getElementById('btn-click').innerHTML='Download QR code';
-    }
+    },[])
+    // function downQr(){
+    //     document.getElementById('btn-click').innerHTML='Please wait';
+    //     const qrCode=document.getElementById('qr-div');
+    //     html2canvas(qrCode).then((canvas)=>{
+    //         const base64image=canvas.toDataURL('image/png');
+    //         var anchor=document.createElement('a');
+    //         anchor.setAttribute('href',base64image);
+    //         anchor.setAttribute('download','myqr-img.png');
+    //         anchor.click();
+    //         anchor.remove();
+    //     })
+    //     // document.getElementById('btn-click').innerHTML='donw';
+    //     document.getElementById('btn-click').innerHTML='Download QR code';
+    // }
 
     return <div className="item-comp">
         <div><h1 className="name"><span>{itemInfo.itemName} </span><Link to="../logout" className="logoutlink">Logout</Link></h1></div> 
