@@ -65,6 +65,7 @@ function Item(){
     //     downloadjs(dataUrl,'my-qr.png','image/png');
     // },[])
     function downQr(){
+        document.getElementById('btn-click').innerHTML='Please wait';
         const qrCode=document.getElementById('qr-div');
         html2canvas(qrCode).then((canvas)=>{
             const base64image=canvas.toDataURL('image/png');
@@ -74,6 +75,8 @@ function Item(){
             anchor.click();
             anchor.remove();
         })
+        // document.getElementById('btn-click').innerHTML='donw';
+        document.getElementById('btn-click').innerHTML='Download QR code';
     }
 
     return <div className="item-comp">
@@ -85,6 +88,7 @@ function Item(){
                 <QRCode value={itemId} id="qrCode" className="qrCode"/>
                 <p className="qr-web-link">visit www.mytag.com</p></div>
                 <button id="btn-click" onClick={downQr} >Download QR code</button>
+
                 <div className="info-box"><p> <b>Item name :</b> {itemInfo.itemName}</p>
                 <p> <b>Item description :</b> {itemInfo.itemDescription}</p></div>
                 <br />
