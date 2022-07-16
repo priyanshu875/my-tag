@@ -1,0 +1,68 @@
+.sendmsg{
+    height: 100vh;
+    width: 100vw;
+    background-color: #d4c3f6;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.sendmsg header{
+    height: 15vh;
+}
+.center-send{
+    width: 50vw;
+    margin: auto;
+    margin-bottom: 3rem;
+    
+}
+.center-send form{
+    /* border: 2px solid black; */
+    padding: 1.5rem .2rem;
+    border-radius: 25px;
+    background-color: white;
+    text-align: left;
+}
+.center-send form h1{
+    margin-left: 2rem;
+}
+.center-send form input[type='submit']{
+    margin-left: 3rem;
+    
+}
+.center-send form span{
+    float: left;
+    margin-left: 3rem;
+}
+.center-send form input[type="text"]{
+    background: none;
+    border: 1px solid black;
+    height: 2.5rem;
+    font-size: 15px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+    margin: 1rem 0;
+    margin-left: 3rem;
+}
+::placeholder{
+    font-size: 15px;
+}
+
+@media (max-width: 920px){
+    .sendmsg{
+        padding: 0;
+    }
+    .center-send{
+        width: 90vw;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
+    .center-send form span{
+        margin-left: 1rem;
+    }
+    .center-send form input[type='text'],.center-send form input[type='submit']{
+        width: 50vw;
+        margin-left: 1rem;
+    }
+
+}

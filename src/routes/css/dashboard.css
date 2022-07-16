@@ -1,0 +1,114 @@
+.Dashboard{
+    /* border: 2px solid red; */
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    background-color: white;
+}
+.name{
+    /* border: 2px solid green; */
+    background-color: #004aad;
+    padding: 10px 3px;
+}
+.name span{
+    float: left;
+    margin-left: 2rem;
+    font-weight: 100;
+    color: white;
+}
+.name .logoutlink{
+    float: right;
+    border: 2px solid;
+    font-size: 15px;
+    margin-top: .5rem;
+    margin-right: 2rem;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    padding: 5px 8px;
+    border-radius: 7px;
+    font-weight: 600;
+}
+.dash-body{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+.dash-cont-one{
+    /* border: 2px solid blue; */
+    margin-left: 4rem;
+    margin-top: 5rem;
+}
+form{
+    /* border: 2px solid black; */
+    
+}
+.Dashboard input[type="text"]{
+    height: 40px;
+    background-color: #d9d9d9;
+    border-radius: 9px;
+    margin: 0;
+}
+.Dashboard input[type="submit"]{
+    font-weight: 300;
+    padding: 10px 12px;
+    background-color: black;
+    color: white;
+    margin-left: .2rem;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.Dashboard form .item-description{
+    height: 6rem;
+}
+::placeholder{
+    color: black;
+    font-weight: 500;
+}
+.dash-cont-two{
+    /* border: 2px solid yellow; */
+    margin-top: 5rem;
+    margin-right: 15rem;
+}
+.allitems{
+    /* border: 2px solid red; */
+    display: grid;
+    grid-template: 70px/auto auto;
+    gap: 8rem;
+}
+.item{
+    cursor: pointer;
+    /* border: 2px solid black; */
+    width: 8rem;
+    height: 7rem;
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+    border-radius: 15px;
+    padding: 1rem;
+}
+.material-symbols-outlined{
+    /* border: 2px solid black; */
+    font-size: 4.5rem;
+}
+@media (max-width: 920px){
+    .dash-body{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .dash-cont-one{
+        margin: 0;
+        padding: 2rem;
+    }
+    .dash-cont-two{
+        margin: 0;
+    }
+    .allitems{
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        
+    }
+    .item{
+        margin: auto;
+    }
+}

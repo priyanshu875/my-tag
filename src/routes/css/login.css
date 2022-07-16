@@ -1,0 +1,103 @@
+.Login{
+
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    color: black;
+    /* background-image: url('./bg.png'); */
+    /* background-size: cover; */
+
+}
+.center-div{
+    /* border: 2px solid red; */
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-bottom: 14rem;
+    padding: 5px;
+    /* color: white; */
+}
+.center-div h1{
+    margin-bottom: 2rem;
+    font-size: 80px;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+input[type="text"],input[type="password"]{
+    /* border: 2px solid red; */
+    border: none;
+    height: 8vh;
+    width: 20vw;
+    border-radius: 13px;
+    background-color: #d3d3d3;
+    /* color: white; */
+    outline: none;
+    margin-left: .2rem;
+    font-size: 20px;
+    text-indent: 5px;
+}
+input[type="text"]:active,input[type="password"]:active{
+    outline: none;
+}
+::placeholder{
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+    opacity: .6;
+}
+
+input[type="submit"]{
+    border-radius: 10px;
+    /* padding: 8px 10px; */
+    background:none;
+    border: none;
+    width: fit-content;
+}
+input[type="submit"]{
+    float: right;
+    padding: 10px 23px;
+    /* margin-top: 2rem; */
+    font-size: 16px;
+    margin-left: .5rem;
+    background-color: #5271ff;
+    font-weight: bolder;
+  }
+  @media (max-width: 920px){
+    .center-div{
+        width: 90vw;
+        /* height: 100vh; */
+        margin: auto;
+        /* margin-bottom: 10vh; */
+        padding: 10px;
+    }
+    .center-div h1{
+        font-size: 5rem;
+    }
+    input[type="text"],input[type="password"]{
+        width: 70vw;
+        height: 3rem;
+        font-size:1.2rem ;
+    }
+    ::placeholder{
+        /* font-size: 1.9rem; */
+    }
+    .center-div p{
+        font-size: 1.1rem;
+    }
+    input[type="submit"]{
+        font-size: 1.3rem;
+    }
+
+    
+
+  }
