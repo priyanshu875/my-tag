@@ -31,7 +31,7 @@ function SendMsg(){
 
     async function sendMsg(event){
         try{event.preventDefault();
-        let data=await fetch('http://localhost:3001/msg/sendmsg',{
+        let data=await fetch('https://my-tag.herokuapp.com/msg/sendmsg',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

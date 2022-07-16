@@ -10,7 +10,7 @@ function Login(){
     async function loginUser(event){
         event.preventDefault();
        
-        try{const obj=await fetch('http://localhost:3001/auth/signin',{
+        try{const obj=await fetch('https://my-tag.herokuapp.com/auth/signin',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email,password})

@@ -25,7 +25,7 @@ function Item(){
 
     //get item info
     async function getItemMsg(){
-        const url='http://localhost:3001/msg/getmsg/'+itemId;
+        const url='https://my-tag.herokuapp.com/msg/getmsg/'+itemId;
 
         const data=await fetch(url,{
             headers:{
@@ -39,7 +39,7 @@ function Item(){
     }
 
     async function getItemInfo(){
-        const url='http://localhost:3001/operation/getiteminfo/'+itemId;
+        const url='https://my-tag.herokuapp.com/operation/getiteminfo/'+itemId;
         const data=await fetch(url,{
             headers:{
                 'x-access-token':itemId

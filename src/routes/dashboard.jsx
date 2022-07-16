@@ -16,7 +16,7 @@ function Dashboard(){
         const token=localStorage.getItem('token');
         const user=jwt_decode(token);
         const userId=user.userId;
-        const obj=await fetch('http://localhost:3001/operation/getallitems',{
+        const obj=await fetch('https://my-tag.herokuapp.com/operation/getallitems',{
             headers:{
                 'x-access-token':userId
             }
@@ -68,7 +68,7 @@ function Dashboard(){
         const userId=user.userId;
         event.preventDefault();
         // console.log('reach');
-        const obj1=await fetch('http://localhost:3001/operation/additem',{
+        const obj1=await fetch('https://my-tag.herokuapp.com/operation/additem',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
