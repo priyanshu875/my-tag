@@ -43,6 +43,8 @@ function SendMsg(){
             body:JSON.stringify({itemId,senderName,senderContact,senderAddress,senderMessage,imageUrl})
         })
         let obj=await data.json();
+        if(obj.status=='ok')alert('Thanks for your support')
+        else alert('Server error');
         console.log(obj);
         // if(obj.status=='ok')alert('Thank you for your support')
         // else alert('Server problem')
