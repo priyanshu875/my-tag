@@ -21,7 +21,7 @@ function Home(){
                 </div>
             </div>
             <div className="img-one">
-            <img src={require('./img155.png')} />
+            <img src={require('./img115.png')} />
             </div>
         </div>
     </div>

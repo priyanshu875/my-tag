@@ -10,7 +10,8 @@
     display: none;
   }
   .Home{
-    background-color: #ffde59;
+    /* background-color: #ffde59; */
+    background-color: #c5dbf2;
     height: 100vh;
     width: 100vw;
     overflow: scroll;
@@ -28,7 +29,7 @@
   }
   
   button{
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 8px 10px;
     background:none;
     border: none;
@@ -65,12 +66,15 @@
   .app-body{
     /* border: 2px solid red; */
     display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
   }
   .title-one{
     /* border:  2px solid black; */
     width:40vw;
     margin-top: 2rem;
-    margin-left: 7rem;
+    /* margin-left: 10rem; */
   }
   .title-one h1{
     text-align: left;
@@ -78,13 +82,19 @@
     font-weight: 800;
     letter-spacing: -1px;
     /* line-height: 5rem; */
+    color: #241c15;
+    font-family: Means Web,Georgia,Times,Times New Roman,serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    /* line-height: 1; */
+    letter-spacing: -.03125rem;
     
   }
   .img-one{
     /* border: 2px solid blue; */
     width: fit-content;
     margin-top: 3rem;
-    margin-left: 12rem;
+    /* margin-left: 1rem; */
   }
   .img-one img{
     height: 55vh;
@@ -93,11 +103,12 @@
   .title-one .btn-div{
     /* border: 2px solid red; */
     display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
   }
   .btn-div button{
-    margin: 1.5rem;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 10px 20px;
   }
   
   @media (max-width: 920px){
@@ -123,15 +134,20 @@
       /* padding-bottom: 4rem; */
     }
     .title-one{
-      margin: 0;
+      margin: auto;
       margin-left: 1.5rem;
       width: 90vw;
     }
     .title-one h1{
-      font-size: 4.5rem;
+      font-size: 3.5rem;
+      margin: auto;
+    }
+    .title-one .btn-div{
+      
     }
     .img-one {
       margin: auto;
+      margin-top: 2rem;
     }
     .img-one img{
       height: 30vh;
