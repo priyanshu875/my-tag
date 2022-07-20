@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 import './css/item.css'
 
 
+
+
 function Item(){
     // document.getElementById('btn-click').onclick=function(){
         
@@ -33,8 +35,11 @@ function Item(){
             }
         })
         const obj=await data.json();
+        obj.msg.sort((a,b) => new Date(b.updatedAt) - new Date(a.updatedAt));
         // console.log(obj.msg);
         setMsg(obj.msg)
+        
+        
         
     }
 
@@ -49,6 +54,36 @@ function Item(){
         // console.log(obj);
         setItemInfo(obj.info);
     }
+    async function deleteItem(itemId){
+        let url='https://my-tag.herokuapp.com/operation/deleteItem/'+itemId;
+        let data=await fetch(url,{
+            method:'DELETE'
+        });
+        let obj=await data.json();
+        if(obj.status=='deleted'){
+            alert('deleted item');
+            window.location.href='./'
+        }
+        else alert('server error')
+    }
+
+    //deleting msg
+    async function deleteMsg(msgId){
+        let url='https://my-tag.herokuapp.com/msg/deleteMsg/'+msgId;
+        let data=await fetch(url,{
+            method:'DELETE'
+        });
+        let obj=await data.json();
+        if(obj.status=='deleted'){
+            alert('Moved To Trash');
+            
+        }
+        else alert('server error')
+        window.location.reload();
+    }
+    
+    
+
     function openImg(url){
         window.open(url)
     }
@@ -57,6 +92,8 @@ function Item(){
         getItemInfo();
         getItemMsg();
         
+
+        console.log(msg);
     },[])
 
     const downQr=useCallback(async ()=>{
@@ -80,6 +117,7 @@ function Item(){
     //     // document.getElementById('btn-click').innerHTML='donw';
     //     document.getElementById('btn-click').innerHTML='Download QR code';
     // }
+    
 
     return <div className="item-comp">
         <div><h1 className="name"><span>{itemInfo.itemName} </span><Link to="../logout" className="logoutlink">Logout</Link></h1></div> 
@@ -92,18 +130,22 @@ function Item(){
                 <button id="btn-click" onClick={downQr} >Download QR code</button>
 
                 <div className="info-box"><p> <b>Item name :</b> {itemInfo.itemName}</p>
-                <p> <b>Item description :</b> {itemInfo.itemDescription}</p></div>
+                <p> <b>Item description :</b> {itemInfo.itemDescription}</p>
+                <button onClick={(e)=>deleteItem(itemId)}>Delete Item</button>
+                </div>
                 <br />
             </div>
             <div className="item-msg">
                 <h1>Notifications</h1>
                 {msg.length ? msg.map((value,key)=>{
+                    
                     return(<div className="msg-box">
                         {value.senderName ? <span><h4>Name</h4> <p>{value.senderName}</p></span> : <span> </span>}
                         {value.senderContact ? <span><h4>Contact</h4> <p>{value.senderContact}</p></span> : <span> </span>}
                         {value.senderAddress ? <span><h4>Address </h4><p>{value.senderAddress}</p></span> :<span> </span>}
                         {value.senderMessage ? <span><h4>Item Description </h4><p>{value.senderMessage}</p></span> : <span> </span>}
-                        {value.imageUrl ? <div><span><h4>Proof</h4></span><img src={value.imageUrl} alt="" height='100px' width="50%" onClick={(e)=>openImg(value.imageUrl)} /></div> : <span> </span>}
+                        {value.imageUrl ? <div><span><h4>Proof</h4></span><img src={value.imageUrl } alt="" height='100px' width="50%" onClick={(e)=>openImg(value.imageUrl)} /></div> : <span> </span>}
+                        <button onClick={(e)=>deleteMsg(value._id)}> move to trash</button>
                         <hr />
                         <br />
                     </div>)

@@ -69,12 +69,13 @@ form{
     /* border: 2px solid yellow; */
     margin-top: 5rem;
     margin-right: 15rem;
+    margin-bottom: 3rem;
 }
 .allitems{
     /* border: 2px solid red; */
     display: grid;
-    grid-template: 70px/auto auto;
-    gap: 8rem;
+    grid-template: 10rem/auto auto;
+    gap: 5rem;
 }
 .item{
     cursor: pointer;
@@ -101,6 +102,7 @@ form{
     }
     .dash-cont-two{
         margin: 0;
+        margin-bottom: 3rem;
     }
     .allitems{
         display: flex;
