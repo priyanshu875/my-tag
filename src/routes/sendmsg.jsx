@@ -76,30 +76,35 @@ function SendMsg(){
             value={itemId}
             onChange={(e)=>setItemId(e.target.value)}
             placeholder="# Item ID"
+            required
             />
             <input 
             type="text" 
             value={senderName}
             onChange={(e)=>setSenderName(e.target.value)}
             placeholder="Name"
+            required
             />
             <input 
             type="text" 
             value={senderContact}
             onChange={(e)=>setSenderContact(e.target.value)}
             placeholder="Email / Mobile"
+            required
             />
             <input 
             type="text" 
             value={senderAddress}
             onChange={(e)=>setSenderAddress(e.target.value)}
             placeholder="Address"
+            required
             />
             <input 
             type="text" 
             value={senderMessage}
             onChange={(e)=>setSenderMsg(e.target.value)}
             placeholder="Item Description:"
+            required
             />
             <span>Upload any proof : <input 
             type='file'
