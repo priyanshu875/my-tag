@@ -61,7 +61,7 @@ function Item(){
         });
         let obj=await data.json();
         if(obj.status=='deleted'){
-            alert('deleted item');
+            alert('Item deleted');
             window.location.href='./'
         }
         else alert('server error')

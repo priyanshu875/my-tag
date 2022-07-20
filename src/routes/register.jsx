@@ -19,7 +19,7 @@ function Register(){
 
             console.log(data);
             if(data.status=='ok'){
-                alert('account created');
+                alert('Account created');
                 window.location.href='/login';
             }
             else if(data.status=='err'){
@@ -27,7 +27,7 @@ function Register(){
             }
         }
         catch(err){
-            alert("server error");
+            alert("Server error");
             window.location.reload();
         }
     }

@@ -76,7 +76,10 @@ function Dashboard(){
             body:JSON.stringify({userId,itemName,itemDescription})
         })
         const data1=await obj1.json();
-        alert(data1.status)
+        if(data.status=='ok'){
+            alert('Item added');
+        }
+        else(alert('Server Error'))
         getAllItems()
     }
 

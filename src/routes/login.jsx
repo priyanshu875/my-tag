@@ -18,14 +18,14 @@ function Login(){
         const data=await obj.json();
         if(data.user){
             localStorage.setItem("token",data.user)
-            alert('login succesfull')
+            alert('Login Succesfull')
             window.location.href='/dashboard';
         }
         else{
-            alert('check your credentials')
+            alert('Check your credentials')
         }}
         catch(err){
-            alert("server error");
+            alert("Server error");
         }
 
     }
