@@ -10,7 +10,7 @@ function Register(){
     
     async function registerUser(event){
         event.preventDefault();
-        try{const obj= await fetch('https://my-tag.herokuapp.com/auth/signup',{
+        try{const obj= await fetch('https://my-tag.onrender.com/auth/signup',{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({name,email,password})

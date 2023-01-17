@@ -27,7 +27,7 @@ function Item(){
 
     //get item info
     async function getItemMsg(){
-        const url='https://my-tag.herokuapp.com/msg/getmsg/'+itemId;
+        const url='https://my-tag.onrender.com/msg/getmsg/'+itemId;
 
         const data=await fetch(url,{
             headers:{
@@ -44,7 +44,7 @@ function Item(){
     }
 
     async function getItemInfo(){
-        const url='https://my-tag.herokuapp.com/operation/getiteminfo/'+itemId;
+        const url='https://my-tag.onrender.com/operation/getiteminfo/'+itemId;
         const data=await fetch(url,{
             headers:{
                 'x-access-token':itemId
@@ -55,7 +55,7 @@ function Item(){
         setItemInfo(obj.info);
     }
     async function deleteItem(itemId){
-        let url='https://my-tag.herokuapp.com/operation/deleteItem/'+itemId;
+        let url='https://my-tag.onrender.com/operation/deleteItem/'+itemId;
         let data=await fetch(url,{
             method:'DELETE'
         });
@@ -69,7 +69,7 @@ function Item(){
 
     //deleting msg
     async function deleteMsg(msgId){
-        let url='https://my-tag.herokuapp.com/msg/deleteMsg/'+msgId;
+        let url='https://my-tag.onrender.com/msg/deleteMsg/'+msgId;
         let data=await fetch(url,{
             method:'DELETE'
         });
