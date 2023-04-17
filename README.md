@@ -14,6 +14,7 @@
 * Nodejs
 * MongoDB
 * Express
+* Firebase
 
 ## Installation Guide
 ### Getting started
